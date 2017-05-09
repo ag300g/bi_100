@@ -1,0 +1,438 @@
+[1;33m-*-*--*-*--*-*--*-*-*-*--*-*--*-*--*-*--*-*--*-*-[0m
+[1;32mInformation at Thu May  4 03:10:01 CST 2017[0m
+
+[1;31m注意清理磁盘，谢谢合作 !!![0m
+
+/dev/sdb1       1.7T  1.5T  230G  87% /data
+96G	/data/home/uemc_bi
+62G	/data/home/shikuan
+55G	/data/home/qudanna
+47G	/data/home/yaolin
+45G	/data/home/busbi
+38G	/data/home/g_caiwu
+[1;33m-------------------------------------------------[0m
+136G	/data/xinsi_traffic
+80G	/data/kuaicheshiyebu_fuwubu
+36G	/data/supply_chain
+23G	/data/sec_bi
+18G	/data/speech_exchange
+18G	/data/common_api
+[1;33m-------------------------------------------------[0m
+[1;33m-*-*--*-*--*-*--*-*-*-*--*-*--*-*--*-*--*-*--*-*-[0m
+17/05/04 03:14:05 WARN conf.HiveConf: HiveConf of name hive.metastore.local does not exist
+17/05/04 03:14:05 WARN conf.HiveConf: HiveConf of name hive.hadoop.master does not exist
+
+Logging initialized using configuration in file:/data/hadoop/apache-hive-1.2.1-bin-20161214/conf/hive-log4j.properties
+Added [/home/busbi/common/lib/jsonvisitor-1.0.jar] to class path
+Added resources: [/home/busbi/common/lib/jsonvisitor-1.0.jar]
+OK
+Time taken: 1.326 seconds
+Query ID = busbi_20170504031410_1538d311-62bc-4ca4-8c40-ea3621f6e079
+Total jobs = 4
+Launching Job 1 out of 4
+Number of reduce tasks not specified. Estimated from input data size: 173
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1493104900716_786463, Tracking URL = http://bigdata-hdp-apache501.xg01:8088/proxy/application_1493104900716_786463/
+Kill Command = /usr/local/hadoop-2.7.2/bin/hadoop job  -kill job_1493104900716_786463
+Hadoop job information for Stage-3: number of mappers: 159; number of reducers: 173
+2017-05-04 03:15:10,663 Stage-3 map = 0%,  reduce = 0%
+2017-05-04 03:15:37,611 Stage-3 map = 1%,  reduce = 0%, Cumulative CPU 6.99 sec
+2017-05-04 03:15:39,689 Stage-3 map = 2%,  reduce = 0%, Cumulative CPU 316.7 sec
+2017-05-04 03:15:40,739 Stage-3 map = 5%,  reduce = 0%, Cumulative CPU 919.0 sec
+2017-05-04 03:15:41,815 Stage-3 map = 7%,  reduce = 0%, Cumulative CPU 1638.54 sec
+2017-05-04 03:15:42,878 Stage-3 map = 11%,  reduce = 0%, Cumulative CPU 1912.35 sec
+2017-05-04 03:15:43,928 Stage-3 map = 16%,  reduce = 0%, Cumulative CPU 2215.75 sec
+2017-05-04 03:15:44,973 Stage-3 map = 25%,  reduce = 0%, Cumulative CPU 2457.32 sec
+2017-05-04 03:15:46,009 Stage-3 map = 30%,  reduce = 0%, Cumulative CPU 2630.14 sec
+2017-05-04 03:15:47,055 Stage-3 map = 38%,  reduce = 0%, Cumulative CPU 2982.58 sec
+2017-05-04 03:15:48,125 Stage-3 map = 49%,  reduce = 0%, Cumulative CPU 3329.66 sec
+2017-05-04 03:15:49,161 Stage-3 map = 55%,  reduce = 0%, Cumulative CPU 3622.02 sec
+2017-05-04 03:15:50,200 Stage-3 map = 62%,  reduce = 0%, Cumulative CPU 3814.15 sec
+2017-05-04 03:15:51,236 Stage-3 map = 64%,  reduce = 0%, Cumulative CPU 3991.71 sec
+2017-05-04 03:15:52,269 Stage-3 map = 67%,  reduce = 0%, Cumulative CPU 4146.66 sec
+2017-05-04 03:15:53,301 Stage-3 map = 69%,  reduce = 0%, Cumulative CPU 4252.31 sec
+2017-05-04 03:15:54,346 Stage-3 map = 70%,  reduce = 0%, Cumulative CPU 4393.37 sec
+2017-05-04 03:15:56,417 Stage-3 map = 71%,  reduce = 0%, Cumulative CPU 4567.47 sec
+2017-05-04 03:15:58,501 Stage-3 map = 72%,  reduce = 0%, Cumulative CPU 4744.89 sec
+2017-05-04 03:15:59,538 Stage-3 map = 73%,  reduce = 0%, Cumulative CPU 4811.77 sec
+2017-05-04 03:16:00,575 Stage-3 map = 75%,  reduce = 0%, Cumulative CPU 4906.55 sec
+2017-05-04 03:16:01,605 Stage-3 map = 76%,  reduce = 0%, Cumulative CPU 4969.49 sec
+2017-05-04 03:16:02,643 Stage-3 map = 77%,  reduce = 0%, Cumulative CPU 5015.59 sec
+2017-05-04 03:16:03,685 Stage-3 map = 78%,  reduce = 0%, Cumulative CPU 5089.16 sec
+2017-05-04 03:16:04,721 Stage-3 map = 80%,  reduce = 0%, Cumulative CPU 5167.19 sec
+2017-05-04 03:16:05,771 Stage-3 map = 81%,  reduce = 0%, Cumulative CPU 5224.67 sec
+2017-05-04 03:16:06,811 Stage-3 map = 82%,  reduce = 0%, Cumulative CPU 5290.68 sec
+2017-05-04 03:16:07,845 Stage-3 map = 83%,  reduce = 0%, Cumulative CPU 5359.82 sec
+2017-05-04 03:16:08,879 Stage-3 map = 84%,  reduce = 0%, Cumulative CPU 5411.08 sec
+2017-05-04 03:16:09,929 Stage-3 map = 86%,  reduce = 0%, Cumulative CPU 5481.73 sec
+2017-05-04 03:16:10,966 Stage-3 map = 89%,  reduce = 0%, Cumulative CPU 5542.26 sec
+2017-05-04 03:16:11,996 Stage-3 map = 91%,  reduce = 0%, Cumulative CPU 5574.92 sec
+2017-05-04 03:16:13,029 Stage-3 map = 93%,  reduce = 0%, Cumulative CPU 5625.1 sec
+2017-05-04 03:16:14,062 Stage-3 map = 94%,  reduce = 0%, Cumulative CPU 5643.39 sec
+2017-05-04 03:16:16,133 Stage-3 map = 95%,  reduce = 0%, Cumulative CPU 5683.41 sec
+2017-05-04 03:16:19,227 Stage-3 map = 96%,  reduce = 0%, Cumulative CPU 5734.09 sec
+2017-05-04 03:16:20,260 Stage-3 map = 97%,  reduce = 0%, Cumulative CPU 5754.63 sec
+2017-05-04 03:16:23,359 Stage-3 map = 98%,  reduce = 0%, Cumulative CPU 5782.52 sec
+2017-05-04 03:16:25,413 Stage-3 map = 99%,  reduce = 0%, Cumulative CPU 5795.8 sec
+2017-05-04 03:16:41,905 Stage-3 map = 100%,  reduce = 0%, Cumulative CPU 5806.51 sec
+2017-05-04 03:16:51,492 Stage-3 map = 100%,  reduce = 2%, Cumulative CPU 5839.76 sec
+2017-05-04 03:16:52,533 Stage-3 map = 100%,  reduce = 3%, Cumulative CPU 5872.42 sec
+2017-05-04 03:16:53,576 Stage-3 map = 100%,  reduce = 15%, Cumulative CPU 6073.13 sec
+2017-05-04 03:16:54,610 Stage-3 map = 100%,  reduce = 46%, Cumulative CPU 6664.18 sec
+2017-05-04 03:16:55,635 Stage-3 map = 100%,  reduce = 49%, Cumulative CPU 6722.1 sec
+2017-05-04 03:16:56,682 Stage-3 map = 100%,  reduce = 55%, Cumulative CPU 6867.16 sec
+2017-05-04 03:16:57,719 Stage-3 map = 100%,  reduce = 61%, Cumulative CPU 6977.7 sec
+2017-05-04 03:16:58,754 Stage-3 map = 100%,  reduce = 62%, Cumulative CPU 7002.75 sec
+2017-05-04 03:16:59,784 Stage-3 map = 100%,  reduce = 64%, Cumulative CPU 7068.31 sec
+2017-05-04 03:17:00,809 Stage-3 map = 100%,  reduce = 65%, Cumulative CPU 7085.45 sec
+2017-05-04 03:17:01,836 Stage-3 map = 100%,  reduce = 67%, Cumulative CPU 7186.04 sec
+2017-05-04 03:17:02,872 Stage-3 map = 100%,  reduce = 75%, Cumulative CPU 7470.94 sec
+2017-05-04 03:17:03,919 Stage-3 map = 100%,  reduce = 79%, Cumulative CPU 7639.22 sec
+2017-05-04 03:17:04,972 Stage-3 map = 100%,  reduce = 87%, Cumulative CPU 7911.32 sec
+2017-05-04 03:17:06,015 Stage-3 map = 100%,  reduce = 93%, Cumulative CPU 8137.3 sec
+2017-05-04 03:17:07,054 Stage-3 map = 100%,  reduce = 95%, Cumulative CPU 8262.96 sec
+2017-05-04 03:17:08,110 Stage-3 map = 100%,  reduce = 98%, Cumulative CPU 8368.13 sec
+2017-05-04 03:17:09,144 Stage-3 map = 100%,  reduce = 99%, Cumulative CPU 8432.46 sec
+2017-05-04 03:17:17,473 Stage-3 map = 100%,  reduce = 100%, Cumulative CPU 8533.68 sec
+MapReduce Total cumulative CPU time: 0 days 2 hours 22 minutes 13 seconds 680 msec
+Ended Job = job_1493104900716_786463
+Launching Job 2 out of 4
+Number of reduce tasks not specified. Estimated from input data size: 3
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1493104900716_786802, Tracking URL = http://bigdata-hdp-apache501.xg01:8088/proxy/application_1493104900716_786802/
+Kill Command = /usr/local/hadoop-2.7.2/bin/hadoop job  -kill job_1493104900716_786802
+Hadoop job information for Stage-4: number of mappers: 3; number of reducers: 3
+2017-05-04 03:17:50,063 Stage-4 map = 0%,  reduce = 0%
+2017-05-04 03:18:03,433 Stage-4 map = 25%,  reduce = 0%, Cumulative CPU 27.2 sec
+2017-05-04 03:18:06,527 Stage-4 map = 38%,  reduce = 0%, Cumulative CPU 37.19 sec
+2017-05-04 03:18:08,582 Stage-4 map = 49%,  reduce = 0%, Cumulative CPU 38.9 sec
+2017-05-04 03:18:09,612 Stage-4 map = 55%,  reduce = 0%, Cumulative CPU 44.14 sec
+2017-05-04 03:18:12,720 Stage-4 map = 61%,  reduce = 0%, Cumulative CPU 49.59 sec
+2017-05-04 03:18:15,820 Stage-4 map = 67%,  reduce = 0%, Cumulative CPU 61.6 sec
+2017-05-04 03:18:18,921 Stage-4 map = 69%,  reduce = 0%, Cumulative CPU 71.31 sec
+2017-05-04 03:18:22,022 Stage-4 map = 70%,  reduce = 0%, Cumulative CPU 77.92 sec
+2017-05-04 03:18:25,111 Stage-4 map = 77%,  reduce = 0%, Cumulative CPU 84.72 sec
+2017-05-04 03:18:28,199 Stage-4 map = 78%,  reduce = 0%, Cumulative CPU 91.38 sec
+2017-05-04 03:18:31,316 Stage-4 map = 85%,  reduce = 0%, Cumulative CPU 98.9 sec
+2017-05-04 03:18:34,398 Stage-4 map = 97%,  reduce = 0%, Cumulative CPU 105.25 sec
+2017-05-04 03:18:36,459 Stage-4 map = 100%,  reduce = 0%, Cumulative CPU 109.32 sec
+2017-05-04 03:18:50,841 Stage-4 map = 100%,  reduce = 21%, Cumulative CPU 116.85 sec
+2017-05-04 03:18:53,970 Stage-4 map = 100%,  reduce = 23%, Cumulative CPU 126.7 sec
+2017-05-04 03:18:57,057 Stage-4 map = 100%,  reduce = 25%, Cumulative CPU 131.72 sec
+2017-05-04 03:18:59,116 Stage-4 map = 100%,  reduce = 55%, Cumulative CPU 151.17 sec
+2017-05-04 03:19:00,134 Stage-4 map = 100%,  reduce = 58%, Cumulative CPU 154.71 sec
+2017-05-04 03:19:02,190 Stage-4 map = 100%,  reduce = 65%, Cumulative CPU 161.32 sec
+2017-05-04 03:19:03,221 Stage-4 map = 100%,  reduce = 68%, Cumulative CPU 166.12 sec
+2017-05-04 03:19:05,274 Stage-4 map = 100%,  reduce = 76%, Cumulative CPU 175.99 sec
+2017-05-04 03:19:08,363 Stage-4 map = 100%,  reduce = 78%, Cumulative CPU 198.38 sec
+2017-05-04 03:19:11,494 Stage-4 map = 100%,  reduce = 81%, Cumulative CPU 218.97 sec
+2017-05-04 03:19:14,568 Stage-4 map = 100%,  reduce = 82%, Cumulative CPU 222.38 sec
+2017-05-04 03:19:15,604 Stage-4 map = 100%,  reduce = 83%, Cumulative CPU 226.0 sec
+2017-05-04 03:19:17,660 Stage-4 map = 100%,  reduce = 84%, Cumulative CPU 229.61 sec
+2017-05-04 03:19:18,684 Stage-4 map = 100%,  reduce = 85%, Cumulative CPU 233.26 sec
+2017-05-04 03:19:20,736 Stage-4 map = 100%,  reduce = 87%, Cumulative CPU 236.95 sec
+2017-05-04 03:19:21,757 Stage-4 map = 100%,  reduce = 88%, Cumulative CPU 240.57 sec
+2017-05-04 03:19:23,817 Stage-4 map = 100%,  reduce = 89%, Cumulative CPU 245.36 sec
+2017-05-04 03:19:24,855 Stage-4 map = 100%,  reduce = 90%, Cumulative CPU 248.99 sec
+2017-05-04 03:19:26,898 Stage-4 map = 100%,  reduce = 91%, Cumulative CPU 253.5 sec
+2017-05-04 03:19:27,926 Stage-4 map = 100%,  reduce = 92%, Cumulative CPU 258.87 sec
+2017-05-04 03:19:29,967 Stage-4 map = 100%,  reduce = 94%, Cumulative CPU 264.03 sec
+2017-05-04 03:19:31,015 Stage-4 map = 100%,  reduce = 95%, Cumulative CPU 269.28 sec
+2017-05-04 03:19:34,098 Stage-4 map = 100%,  reduce = 97%, Cumulative CPU 275.91 sec
+2017-05-04 03:19:37,181 Stage-4 map = 100%,  reduce = 98%, Cumulative CPU 283.37 sec
+2017-05-04 03:19:39,239 Stage-4 map = 100%,  reduce = 99%, Cumulative CPU 286.23 sec
+2017-05-04 03:19:40,271 Stage-4 map = 100%,  reduce = 100%, Cumulative CPU 289.59 sec
+MapReduce Total cumulative CPU time: 4 minutes 49 seconds 590 msec
+Ended Job = job_1493104900716_786802
+Launching Job 3 out of 4
+Number of reduce tasks not specified. Estimated from input data size: 3
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1493104900716_787022, Tracking URL = http://bigdata-hdp-apache501.xg01:8088/proxy/application_1493104900716_787022/
+Kill Command = /usr/local/hadoop-2.7.2/bin/hadoop job  -kill job_1493104900716_787022
+Hadoop job information for Stage-1: number of mappers: 3; number of reducers: 3
+2017-05-04 03:20:34,011 Stage-1 map = 0%,  reduce = 0%
+2017-05-04 03:20:47,675 Stage-1 map = 38%,  reduce = 0%, Cumulative CPU 27.62 sec
+2017-05-04 03:20:53,943 Stage-1 map = 43%,  reduce = 0%, Cumulative CPU 40.57 sec
+2017-05-04 03:20:57,219 Stage-1 map = 52%,  reduce = 0%, Cumulative CPU 48.51 sec
+2017-05-04 03:20:59,486 Stage-1 map = 55%,  reduce = 0%, Cumulative CPU 60.71 sec
+2017-05-04 03:21:06,110 Stage-1 map = 72%,  reduce = 0%, Cumulative CPU 78.35 sec
+2017-05-04 03:21:09,285 Stage-1 map = 76%,  reduce = 0%, Cumulative CPU 85.37 sec
+2017-05-04 03:21:12,384 Stage-1 map = 89%,  reduce = 0%, Cumulative CPU 91.77 sec
+2017-05-04 03:21:15,487 Stage-1 map = 93%,  reduce = 0%, Cumulative CPU 95.25 sec
+2017-05-04 03:21:18,572 Stage-1 map = 96%,  reduce = 0%, Cumulative CPU 98.51 sec
+2017-05-04 03:21:21,663 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 101.6 sec
+2017-05-04 03:21:54,638 Stage-1 map = 100%,  reduce = 67%, Cumulative CPU 121.85 sec
+2017-05-04 03:22:00,898 Stage-1 map = 100%,  reduce = 74%, Cumulative CPU 135.46 sec
+2017-05-04 03:22:04,016 Stage-1 map = 100%,  reduce = 83%, Cumulative CPU 144.79 sec
+2017-05-04 03:22:07,132 Stage-1 map = 100%,  reduce = 88%, Cumulative CPU 152.53 sec
+2017-05-04 03:22:10,247 Stage-1 map = 100%,  reduce = 94%, Cumulative CPU 161.21 sec
+2017-05-04 03:22:11,276 Stage-1 map = 100%,  reduce = 95%, Cumulative CPU 162.94 sec
+2017-05-04 03:22:13,353 Stage-1 map = 100%,  reduce = 97%, Cumulative CPU 167.2 sec
+2017-05-04 03:22:16,447 Stage-1 map = 100%,  reduce = 99%, Cumulative CPU 170.48 sec
+2017-05-04 03:22:18,526 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 173.33 sec
+MapReduce Total cumulative CPU time: 2 minutes 53 seconds 330 msec
+Ended Job = job_1493104900716_787022
+Launching Job 4 out of 4
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1493104900716_787268, Tracking URL = http://bigdata-hdp-apache501.xg01:8088/proxy/application_1493104900716_787268/
+Kill Command = /usr/local/hadoop-2.7.2/bin/hadoop job  -kill job_1493104900716_787268
+Hadoop job information for Stage-2: number of mappers: 2; number of reducers: 1
+2017-05-04 03:23:03,426 Stage-2 map = 0%,  reduce = 0%
+2017-05-04 03:23:23,327 Stage-2 map = 6%,  reduce = 0%, Cumulative CPU 30.14 sec
+2017-05-04 03:23:24,357 Stage-2 map = 12%,  reduce = 0%, Cumulative CPU 34.34 sec
+2017-05-04 03:23:36,706 Stage-2 map = 32%,  reduce = 0%, Cumulative CPU 67.83 sec
+2017-05-04 03:23:38,761 Stage-2 map = 46%,  reduce = 0%, Cumulative CPU 73.36 sec
+2017-05-04 03:23:45,981 Stage-2 map = 53%,  reduce = 0%, Cumulative CPU 95.06 sec
+2017-05-04 03:23:49,067 Stage-2 map = 70%,  reduce = 0%, Cumulative CPU 102.41 sec
+2017-05-04 03:23:57,289 Stage-2 map = 83%,  reduce = 0%, Cumulative CPU 117.02 sec
+2017-05-04 03:24:03,463 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 124.05 sec
+2017-05-04 03:24:21,983 Stage-2 map = 100%,  reduce = 79%, Cumulative CPU 144.25 sec
+2017-05-04 03:24:25,082 Stage-2 map = 100%,  reduce = 86%, Cumulative CPU 147.62 sec
+2017-05-04 03:24:28,214 Stage-2 map = 100%,  reduce = 94%, Cumulative CPU 150.97 sec
+2017-05-04 03:24:31,293 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 154.03 sec
+MapReduce Total cumulative CPU time: 2 minutes 34 seconds 30 msec
+Ended Job = job_1493104900716_787268
+MapReduce Jobs Launched: 
+Stage-Stage-3: Map: 159  Reduce: 173   Cumulative CPU: 8533.68 sec   HDFS Read: 44171843735 HDFS Write: 548404584 SUCCESS
+Stage-Stage-4: Map: 3  Reduce: 3   Cumulative CPU: 289.92 sec   HDFS Read: 548472542 HDFS Write: 548385194 SUCCESS
+Stage-Stage-1: Map: 3  Reduce: 3   Cumulative CPU: 173.33 sec   HDFS Read: 548435694 HDFS Write: 546924446 SUCCESS
+Stage-Stage-2: Map: 2  Reduce: 1   Cumulative CPU: 154.03 sec   HDFS Read: 546940635 HDFS Write: 403688366 SUCCESS
+Total MapReduce CPU Time Spent: 0 days 2 hours 32 minutes 30 seconds 960 msec
+OK
+Time taken: 623.964 seconds, Fetched: 5985782 row(s)
+SQL done, now R
+now push to leaf(1/2)
+{"access_key": "ff63a9a52b921aa04827dbf544633bb5", "timestamp": 1493740800, "data": [{"params": {"city_id": "1"}, "val": {"real_ratio": 70.23}}, {"params": {"city_id": "11"}, "val": {"real_ratio": 97.8}}, {"params": {"city_id": "13"}, "val": {"real_ratio": 96.46}}, {"params": {"city_id": "17"}, "val": {"real_ratio": 97.26}}, {"params": {"city_id": "18"}, "val": {"real_ratio": 96.41}}, {"params": {"city_id": "2"}, "val": {"real_ratio": 98.54}}, {"params": {"city_id": "22"}, "val": {"real_ratio": 99.57}}, {"params": {"city_id": "25"}, "val": {"real_ratio": 92.7}}, {"params": {"city_id": "30"}, "val": {"real_ratio": 99.29}}, {"params": {"city_id": "33"}, "val": {"real_ratio": 99.55}}, {"params": {"city_id": "34"}, "val": {"real_ratio": 99.1}}, {"params": {"city_id": "35"}, "val": {"real_ratio": 95.99}}, {"params": {"city_id": "38"}, "val": {"real_ratio": 96.38}}, {"params": {"city_id": "39"}, "val": {"real_ratio": 96.13}}, {"params": {"city_id": "40"}, "val": {"real_ratio": 98.78}}, {"params": {"city_id": "41"}, "val": {"real_ratio": 99.15}}, {"params": {"city_id": "45"}, "val": {"real_ratio": 99.13}}, {"params": {"city_id": "58"}, "val": {"real_ratio": 98.14}}, {"params": {"city_id": "62"}, "val": {"real_ratio": 95.55}}, {"params": {"city_id": "7"}, "val": {"real_ratio": 98.18}}, {"params": {"city_id": "82"}, "val": {"real_ratio": 98.4}}, {"params": {"city_id": "85"}, "val": {"real_ratio": 97.69}}, {"params": {"city_id": "90"}, "val": {"real_ratio": 95.14}}], "access_id": 38}
+[1;33m-*-*--*-*--*-*--*-*-*-*--*-*--*-*--*-*--*-*--*-*-[0m
+[1;32mInformation at Thu May  4 03:20:01 CST 2017[0m
+
+[1;31m注意清理磁盘，谢谢合作 !!![0m
+
+/dev/sdb1       1.7T  1.5T  228G  87% /data
+96G	/data/home/uemc_bi
+62G	/data/home/shikuan
+55G	/data/home/qudanna
+47G	/data/home/yaolin
+45G	/data/home/busbi
+38G	/data/home/g_caiwu
+[1;33m-------------------------------------------------[0m
+136G	/data/xinsi_traffic
+80G	/data/kuaicheshiyebu_fuwubu
+36G	/data/supply_chain
+23G	/data/sec_bi
+18G	/data/speech_exchange
+18G	/data/common_api
+[1;33m-------------------------------------------------[0m
+[1;33m-*-*--*-*--*-*--*-*-*-*--*-*--*-*--*-*--*-*--*-*-[0m
+
+set mapreduce.job.queuename=root.bashishiyebu-yewuzhichengzhongxing.galileo_data;
+set hive.cli.print.header=false;
+
+use transit_dw;
+select 
+    7 as city_id,
+    round(100 * abnormal_num / total_num, 2) as real_abnormal_ratio 
+from 
+(
+    select 
+        sum(case when (bloom_resp['status'] = 1) or (cast(bloom_resp['normal_num'] as int) > 0 and cast(bloom_resp['nogps_num'] as int) / cast(bloom_resp['normal_num'] as int) > 0.6) then 1 else 0 end) as abnormal_num, 
+        count(1) as total_num
+    from dwv_log_transit_realtime_query 
+    where 
+        concat(year,month,day) = '20170503' 
+        and city_id = '7'
+)q
+
+17/05/04 03:26:23 WARN conf.HiveConf: HiveConf of name hive.metastore.local does not exist
+17/05/04 03:26:23 WARN conf.HiveConf: HiveConf of name hive.hadoop.master does not exist
+
+Logging initialized using configuration in file:/data/hadoop/apache-hive-1.2.1-bin-20161214/conf/hive-log4j.properties
+OK
+Time taken: 1.5 seconds
+Query ID = busbi_20170504032628_6e817179-7b64-49cb-a47d-7c534fb4d62a
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1493104900716_787578, Tracking URL = http://bigdata-hdp-apache501.xg01:8088/proxy/application_1493104900716_787578/
+Kill Command = /usr/local/hadoop-2.7.2/bin/hadoop job  -kill job_1493104900716_787578
+Hadoop job information for Stage-1: number of mappers: 12; number of reducers: 1
+2017-05-04 03:27:11,839 Stage-1 map = 0%,  reduce = 0%
+2017-05-04 03:27:25,700 Stage-1 map = 8%,  reduce = 0%, Cumulative CPU 86.99 sec
+2017-05-04 03:27:28,847 Stage-1 map = 17%,  reduce = 0%, Cumulative CPU 167.34 sec
+2017-05-04 03:27:29,884 Stage-1 map = 22%,  reduce = 0%, Cumulative CPU 183.6 sec
+2017-05-04 03:27:32,024 Stage-1 map = 31%,  reduce = 0%, Cumulative CPU 208.94 sec
+2017-05-04 03:27:33,143 Stage-1 map = 39%,  reduce = 0%, Cumulative CPU 232.22 sec
+2017-05-04 03:27:35,348 Stage-1 map = 42%,  reduce = 0%, Cumulative CPU 312.08 sec
+2017-05-04 03:27:36,466 Stage-1 map = 58%,  reduce = 0%, Cumulative CPU 333.97 sec
+2017-05-04 03:27:37,617 Stage-1 map = 64%,  reduce = 0%, Cumulative CPU 335.76 sec
+2017-05-04 03:27:39,723 Stage-1 map = 69%,  reduce = 0%, Cumulative CPU 367.79 sec
+2017-05-04 03:27:41,831 Stage-1 map = 75%,  reduce = 0%, Cumulative CPU 382.66 sec
+2017-05-04 03:27:45,005 Stage-1 map = 81%,  reduce = 0%, Cumulative CPU 398.5 sec
+2017-05-04 03:27:46,054 Stage-1 map = 83%,  reduce = 0%, Cumulative CPU 403.21 sec
+2017-05-04 03:27:57,568 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 460.76 sec
+2017-05-04 03:28:18,434 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 470.97 sec
+MapReduce Total cumulative CPU time: 7 minutes 50 seconds 970 msec
+Ended Job = job_1493104900716_787578
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 12  Reduce: 1   Cumulative CPU: 470.97 sec   HDFS Read: 2245028463 HDFS Write: 7 SUCCESS
+Total MapReduce CPU Time Spent: 7 minutes 50 seconds 970 msec
+OK
+Time taken: 113.419 seconds, Fetched: 1 row(s)
+[1;33m-*-*--*-*--*-*--*-*-*-*--*-*--*-*--*-*--*-*--*-*-[0m
+[1;32mInformation at Thu May  4 03:20:01 CST 2017[0m
+
+[1;31m注意清理磁盘，谢谢合作 !!![0m
+
+/dev/sdb1       1.7T  1.5T  228G  87% /data
+96G	/data/home/uemc_bi
+62G	/data/home/shikuan
+55G	/data/home/qudanna
+47G	/data/home/yaolin
+45G	/data/home/busbi
+38G	/data/home/g_caiwu
+[1;33m-------------------------------------------------[0m
+136G	/data/xinsi_traffic
+80G	/data/kuaicheshiyebu_fuwubu
+36G	/data/supply_chain
+23G	/data/sec_bi
+18G	/data/speech_exchange
+18G	/data/common_api
+[1;33m-------------------------------------------------[0m
+[1;33m-*-*--*-*--*-*--*-*-*-*--*-*--*-*--*-*--*-*--*-*-[0m
+rmr: DEPRECATED: Please use 'rm -r' instead.
+17/05/04 04:54:57 INFO fs.TrashPolicyDefault: Namenode trash configuration: Deletion interval = 10080 minutes, Emptier interval = 0 minutes.
+Moved: 'hdfs://mycluster-tj/user/galileo_data/data/bi/transit_dw/dwm_transit_bm_data_rate/2017/05/03/_SUCCESS' to trash at: hdfs://mycluster-tj/user/galileo_data/.Trash/Current
+
+add jar MapMerge.jar;
+create temporary function map_merge as 'com.hive.udf.MapMerge';
+set mapreduce.job.queuename=root.bashishiyebu-yewuzhichengzhongxing.galileo_data;
+use transit_dw;
+
+create temporary table tmp_abnormal_ratio_20170503(
+    city_id string,
+    real_abnormal_ratio double
+)row format delimited fields terminated by '\t';
+
+load data local inpath '4.txt' overwrite into table tmp_abnormal_ratio_20170503;
+
+create temporary table tmp_dwm_transit_bm_data_rate
+as
+select
+    a.city_id,
+    a.data_source_id,
+    map_merge(statistical_data, map('real_abnormal_ratio', b.real_abnormal_ratio))
+from dwm_transit_bm_data_rate a
+left join tmp_abnormal_ratio_20170503 b
+on a.city_id = b.city_id
+where
+    concat(year,month,day) = '20170503';
+
+alter table dwm_transit_bm_data_rate drop partition(year='2017',month='05',day='03');
+alter table dwm_transit_bm_data_rate add partition(year='2017',month='05',day='03') location '2017/05/03';
+insert overwrite table dwm_transit_bm_data_rate partition(year='2017',month='05',day='03')
+select
+    *
+from tmp_dwm_transit_bm_data_rate;
+
+17/05/04 04:55:01 WARN conf.HiveConf: HiveConf of name hive.metastore.local does not exist
+17/05/04 04:55:01 WARN conf.HiveConf: HiveConf of name hive.hadoop.master does not exist
+
+Logging initialized using configuration in file:/data/hadoop/apache-hive-1.2.1-bin-20161214/conf/hive-log4j.properties
+Added [MapMerge.jar] to class path
+Added resources: [MapMerge.jar]
+OK
+Time taken: 1.52 seconds
+OK
+Time taken: 0.062 seconds
+OK
+Time taken: 0.799 seconds
+Loading data to table transit_dw.tmp_abnormal_ratio_20170503
+Table transit_dw.tmp_abnormal_ratio_20170503 stats: [numFiles=1, numRows=0, totalSize=183, rawDataSize=0]
+OK
+Time taken: 0.428 seconds
+Query ID = busbi_20170504045507_771115ac-7eb9-4999-8b24-433785ee735d
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1493104900716_796231, Tracking URL = http://bigdata-hdp-apache501.xg01:8088/proxy/application_1493104900716_796231/
+Kill Command = /usr/local/hadoop-2.7.2/bin/hadoop job  -kill job_1493104900716_796231
+Hadoop job information for Stage-1: number of mappers: 2; number of reducers: 1
+2017-05-04 04:55:25,547 Stage-1 map = 0%,  reduce = 0%
+2017-05-04 04:55:32,853 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.17 sec
+2017-05-04 04:55:41,160 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 8.06 sec
+MapReduce Total cumulative CPU time: 8 seconds 60 msec
+Ended Job = job_1493104900716_796231
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://mycluster-tj/tmp/hive-staging/hadoop_hive_2017-05-04_04-55-07_949_1729010252413402100-1/-ext-10001
+Moving data to: hdfs://mycluster-tj/tmp/hive-hadoop/galileo_data/212888e5-deb9-4a8f-91e2-e9a8da3d00b3/_tmp_space.db/8cf62221-7060-40a4-8f58-5a1dec3dc728
+Table transit_dw.tmp_dwm_transit_bm_data_rate stats: [numFiles=1, numRows=24, totalSize=6765, rawDataSize=6741]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 2  Reduce: 1   Cumulative CPU: 8.06 sec   HDFS Read: 19353 HDFS Write: 6862 SUCCESS
+Total MapReduce CPU Time Spent: 8 seconds 60 msec
+OK
+a.city_id	a.data_source_id	_c2
+Time taken: 39.044 seconds
+Dropped the partition year=2017/month=05/day=03
+OK
+Time taken: 0.152 seconds
+OK
+Time taken: 0.075 seconds
+Query ID = busbi_20170504045547_a0a3e0b7-3339-49a8-bd38-790dcf493f3a
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1493104900716_796286, Tracking URL = http://bigdata-hdp-apache501.xg01:8088/proxy/application_1493104900716_796286/
+Kill Command = /usr/local/hadoop-2.7.2/bin/hadoop job  -kill job_1493104900716_796286
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2017-05-04 04:55:59,485 Stage-1 map = 0%,  reduce = 0%
+2017-05-04 04:56:11,973 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 5.98 sec
+MapReduce Total cumulative CPU time: 5 seconds 980 msec
+Ended Job = job_1493104900716_796286
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://mycluster-tj/tmp/hive-staging/hadoop_hive_2017-05-04_04-55-47_222_2445728132931809593-1/-ext-10000
+Loading data to table transit_dw.dwm_transit_bm_data_rate partition (year=2017, month=05, day=03)
+Moved: 'hdfs://mycluster-tj/user/galileo_data/data/bi/transit_dw/dwm_transit_bm_data_rate/2017/05/03/000000_0' to trash at: hdfs://mycluster-tj/user/galileo_data/.Trash/Current
+Partition transit_dw.dwm_transit_bm_data_rate{year=2017, month=05, day=03} stats: [numFiles=1, numRows=24, totalSize=1927, rawDataSize=33208]
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1   Cumulative CPU: 5.98 sec   HDFS Read: 11110 HDFS Write: 2047 SUCCESS
+Total MapReduce CPU Time Spent: 5 seconds 980 msec
+OK
+tmp_dwm_transit_bm_data_rate.city_id	tmp_dwm_transit_bm_data_rate.data_source_id	tmp_dwm_transit_bm_data_rate._c2
+Time taken: 28.461 seconds

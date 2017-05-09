@@ -1,0 +1,204 @@
+
+R version 3.3.0 (2016-05-03) -- "Supposedly Educational"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ori_data <- read.table("1.txt",header = TRUE,fileEncoding="utf-8", fill = TRUE)
+> city <- unique(ori_data$city)
+> city_cnt <- length(city)
+> final_data <- as.data.frame(matrix(0,city_cnt,3))
+> names(final_data) <- c("city","real_ratio","real_abnormal_ratio")
+> final_data$city <- city
+> 
+> for (j in 1:city_cnt){
++   temp <- ori_data[ori_data$city==city[j],]  ##先把第j个城市从ori_data里面取出来
++   ## temp就是一个文件中的一个城市的全部数据
++   n1 <- dim(temp)[1]
++   temp <- temp[temp$imei != "",]      ## 处理异常数据
++   temp <- temp[temp$imei !="undefined",]
++   temp <- temp[temp$line_quality_flag != "NULL",]
++   ## 把temp中的factor整理好
++   # temp$line_id <- droplevels(temp$line_id)
++   temp$imei <- droplevels(temp$imei)
++   temp$line_quality_flag <- as.numeric(as.character(temp$line_quality_flag))
++   temp$req_time <- as.numeric(as.character(temp$req_time))
++   
++   n2 <- dim(temp)[1]
++   print(paste(city[j],paste("异常数据的行数：",n1-n2,sep = ""),sep = ""))
++   #### 把lq后面还是lq的lq删除然后再处理, 先过滤一遍lq在处理
++   flag_index <- which(temp$action==1)  ## length(flag_index)的值为89193
++   ## flag_index是lq的位置在temp矩阵中的下标
++   n_max <- n2  # n2是temp的行数
++ 
++   if (max(flag_index) < n_max)
++   {
++       lq_lineid_imei_reqtime1 <- temp[flag_index,c("line_id","imei","req_time")]
++       lq_lineid_imei_reqtime2 <- temp[flag_index+1,c("line_id","imei","req_time","action")]
++   } else
++   {
++       flag_index <- flag_index[1:(length(flag_index)-1)]
++       lq_lineid_imei_reqtime1 <- temp[flag_index,c("line_id","imei","req_time")]
++       lq_lineid_imei_reqtime2 <- temp[flag_index+1,c("line_id","imei","req_time","action")]
++   }
++ 
++   
++   check_lq_flag_in12 <- lq_lineid_imei_reqtime2$action==1
++   check_lq_index_in12 <- which(lq_lineid_imei_reqtime2$action==1)
++   ## 通过把invalid_lq_flag_in12里面的一些TURE改为FASLE,最后flag_index[invalid_lq_flag_in12]就是那些无用lq的下标
++   imei_conditon <- lq_lineid_imei_reqtime1[check_lq_flag_in12,"imei"] == lq_lineid_imei_reqtime2[check_lq_flag_in12,"imei"]
++   lineid_condition <- lq_lineid_imei_reqtime1[check_lq_flag_in12,"line_id"] == lq_lineid_imei_reqtime2[check_lq_flag_in12,"line_id"]
++   reqtime_condition <- (lq_lineid_imei_reqtime2[check_lq_flag_in12,"req_time"]-lq_lineid_imei_reqtime1[check_lq_flag_in12,"req_time"]) < 60
++   
++   invalid_lq_index_in12 <- check_lq_index_in12[imei_conditon & lineid_condition & reqtime_condition]
++   invalid_lq_flag_in12 <- rep(FALSE,times=length(check_lq_flag_in12))
++   invalid_lq_flag_in12[invalid_lq_index_in12] <- TRUE
++   print(paste(city[j],paste("无效查询的个数：",length(invalid_lq_index_in12),sep = ""),sep = ""))
++   ## sum(invalid_lq_flag_in12 & check_lq_flag_in12)的值和length(invalid_lq_index_in12)一致
++   
++   # 更新temp
++   invalid_lq_index <- flag_index[invalid_lq_flag_in12]
++   if(length(invalid_lq_index)>0){
++     temp <- temp[-invalid_lq_index,]
++   }
++   # temp$line_id <- droplevels(temp$line_id)
++   temp$imei <- droplevels(temp$imei)
++   # temp$line_quality_flag <- droplevels(temp$line_quality_flag)
++   ## 更新temp的行数
++   n_max <- dim(temp)[1]
++   ## 更新flag_index为temp中实时lq的行标
++   flag_index <- which(temp$action==1 & temp$line_quality_flag == 1)
++ 
++   rm(lq_lineid_imei_reqtime1)
++   rm(lq_lineid_imei_reqtime2)
++   
++   ## lq的个数
++   final_data[final_data$city==city[j],"real_ratio"] <- round(sum(temp$action==1 & temp$line_quality_flag == 1)/(sum(temp$action==1)+0.001),4)*100
++ 
++   ## 匹配实时lq之后的lbl
++   if (max(flag_index) < n_max) 
++     {
++       lq_lineid_imei_reqtime <- temp[flag_index,c("line_id","imei","req_time")]  ## 所有实时查询的记录
++       lbl_lineid_imei_reqtime <- temp[flag_index+1,c("line_id","imei","req_time","action","line_quality_flag")]
++     } else 
++     {
++       flag_index <- flag_index[1:(length(flag_index)-1)]
++       lq_lineid_imei_reqtime <- temp[flag_index,c("line_id","imei","req_time")]
++       lbl_lineid_imei_reqtime <- temp[flag_index+1,c("line_id","imei","req_time","action","line_quality_flag")]
++     }
++   l <- dim(lq_lineid_imei_reqtime)[1]
++   lq_lineid_imei_reqtime$"lbl_req_time" <- rep(0,l)
++   lq_lineid_imei_reqtime$"lbl_line_quality_flag" <- rep(0,l)
++   ## 在lq_lineid_imei_reqtime后面加上两列用来匹配相应的lbl的值
++   
++   imei_conditon <- lq_lineid_imei_reqtime$imei == lbl_lineid_imei_reqtime$imei
++   lineid_condition <- lq_lineid_imei_reqtime$line_id == lbl_lineid_imei_reqtime$line_id
++   reqtime_condition <- (lbl_lineid_imei_reqtime$req_time-lq_lineid_imei_reqtime$req_time) < 60
++   
++   match_flag <- imei_conditon & lineid_condition & reqtime_condition
++   lq_lineid_imei_reqtime$lbl_req_time[match_flag] <- lbl_lineid_imei_reqtime$req_time[match_flag]
++   lq_lineid_imei_reqtime$lbl_line_quality_flag[match_flag] <- as.numeric(as.character(lbl_lineid_imei_reqtime$line_quality_flag[match_flag]))
++   lq_lineid_imei_reqtime$lbl_req_time[!match_flag] <- 0
++   lq_lineid_imei_reqtime$lbl_line_quality_flag[!match_flag] <- 10
++   
++   ## 其他字段的赋值
++   final_data[final_data$city==city[j],"real_abnormal_ratio"] <- round((sum(lq_lineid_imei_reqtime$lbl_line_quality_flag == 2)+sum(lq_lineid_imei_reqtime$lbl_line_quality_flag == 3)+sum(lq_lineid_imei_reqtime$lbl_line_quality_flag == 4))/(sum(temp$action==1 & temp$line_quality_flag == 1)+0.01),4)*100
++ print(paste(city[j],"已完成",sep=" "))
++ }
+[1] "1异常数据的行数：21"
+[1] "1无效查询的个数：384"
+[1] "1 已完成"
+[1] "11异常数据的行数：395"
+[1] "11无效查询的个数：535"
+[1] "11 已完成"
+[1] "13异常数据的行数：270"
+[1] "13无效查询的个数：321"
+[1] "13 已完成"
+[1] "17异常数据的行数：211"
+[1] "17无效查询的个数：612"
+[1] "17 已完成"
+[1] "18异常数据的行数：116"
+[1] "18无效查询的个数：339"
+[1] "18 已完成"
+[1] "2异常数据的行数：433"
+[1] "2无效查询的个数：319"
+[1] "2 已完成"
+[1] "22异常数据的行数：272"
+[1] "22无效查询的个数：610"
+[1] "22 已完成"
+[1] "25异常数据的行数：484"
+[1] "25无效查询的个数：419"
+[1] "25 已完成"
+[1] "30异常数据的行数：13"
+[1] "30无效查询的个数：27"
+[1] "30 已完成"
+[1] "33异常数据的行数：62"
+[1] "33无效查询的个数：84"
+[1] "33 已完成"
+[1] "34异常数据的行数：75"
+[1] "34无效查询的个数：198"
+[1] "34 已完成"
+[1] "35异常数据的行数：61"
+[1] "35无效查询的个数：137"
+[1] "35 已完成"
+[1] "38异常数据的行数：9"
+[1] "38无效查询的个数：34"
+[1] "38 已完成"
+[1] "39异常数据的行数：60"
+[1] "39无效查询的个数：153"
+[1] "39 已完成"
+[1] "40异常数据的行数：20"
+[1] "40无效查询的个数：68"
+[1] "40 已完成"
+[1] "41异常数据的行数：85"
+[1] "41无效查询的个数：135"
+[1] "41 已完成"
+[1] "45异常数据的行数：97"
+[1] "45无效查询的个数：87"
+[1] "45 已完成"
+[1] "58异常数据的行数：3"
+[1] "58无效查询的个数：49"
+[1] "58 已完成"
+[1] "62异常数据的行数：75"
+[1] "62无效查询的个数：103"
+[1] "62 已完成"
+[1] "7异常数据的行数：123"
+[1] "7无效查询的个数：157"
+[1] "7 已完成"
+[1] "82异常数据的行数：136"
+[1] "82无效查询的个数：283"
+[1] "82 已完成"
+[1] "85异常数据的行数：141"
+[1] "85无效查询的个数：139"
+[1] "85 已完成"
+[1] "90异常数据的行数：9"
+[1] "90无效查询的个数：49"
+[1] "90 已完成"
+> print("全部数据已完成!")
+[1] "全部数据已完成!"
+> names(final_data)[1] <- "city_id"
+> ## 筛选城市
+> data1 <- final_data[,c(1,2)]
+> data2 <- final_data[!final_data$city_id %in% c(4,7),c(1,3)]
+> #data2 <- final_data[,c(1,3)]
+> write.table(data1,file="2.txt",sep = "\t",fileEncoding = "utf-8",row.names = FALSE,col.names = TRUE,quote = FALSE)
+> write.table(data2,file="3.txt",sep = "\t",fileEncoding = "utf-8",row.names = FALSE,col.names = TRUE,quote = FALSE)
+> 
+> proc.time()
+   user  system elapsed 
+ 43.147   1.428  59.075 
