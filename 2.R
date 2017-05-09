@@ -1,3 +1,4 @@
+## diff from 1.R in 1.R select city, 2.R use all the city
 ori_data <- read.table("1.txt",header = TRUE,fileEncoding="utf-8", fill = TRUE)
 city <- unique(ori_data$city)
 city_cnt <- length(city)
