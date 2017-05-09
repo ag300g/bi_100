@@ -1,4 +1,5 @@
-ori_data <- read.table("1.txt",header = TRUE,fileEncoding="utf-8", fill = TRUE)
+##1.txt is users detail action data from sql
+ori_data <- read.table("1.txt",header = TRUE,fileEncoding="utf-8", fill = TRUE)1.tzt
 city <- unique(ori_data$city)
 city_cnt <- length(city)
 final_data <- as.data.frame(matrix(0,city_cnt,3))
